@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  prizes: 1
+  has_won: false
+
+two:
+  name: MyString
+  prizes: 1
+  has_won: false

@@ -1,0 +1,175 @@
+Started GET "/" for ::1 at 2017-03-31 09:44:26 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aaron/.gem/ruby/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aaron/.gem/ruby/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 19ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePractitioners (20170405163432)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "practitioners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "company" varchar, "title" varchar, "has_won" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170405163432"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-05 16:35:47 UTC], ["updated_at", 2017-04-05 16:35:47 UTC]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-05 11:36:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/aaron/.gem/ruby/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aaron/.gem/ruby/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/practitioners" for ::1 at 2017-04-05 11:36:09 -0500
+Processing by PractitionersController#index as HTML
+  Rendering practitioners/index.html.erb within layouts/application
+  [1m[36mPractitioner Load (0.2ms)[0m  [1m[34mSELECT "practitioners".* FROM "practitioners"[0m
+  Rendered practitioners/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 421ms (Views: 416.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/practitioners/new" for ::1 at 2017-04-05 11:36:12 -0500
+Processing by PractitionersController#new as HTML
+  Rendering practitioners/new.html.erb within layouts/application
+  Rendered practitioners/_form.html.erb (18.4ms)
+  Rendered practitioners/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 44ms (Views: 37.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/practitioners" for ::1 at 2017-04-05 11:36:24 -0500
+Processing by PractitionersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vdgp7+3+HSx7Fofm+FOBPsxxWFNqcrW3//PJtLUvsaT9DymNLNTJRrhAiatlQvxNOfblaLo1sraAwlj8PFth8Q==", "practitioner"=>{"name"=>"test1", "company"=>"some company", "title"=>"some title", "has_won"=>"0"}, "commit"=>"Create Practitioner"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "practitioners" ("name", "company", "title", "has_won", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "test1"], ["company", "some company"], ["title", "some title"], ["has_won", false], ["created_at", 2017-04-05 16:36:24 UTC], ["updated_at", 2017-04-05 16:36:24 UTC]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/practitioners/1
+Completed 302 Found in 9ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/practitioners/1" for ::1 at 2017-04-05 11:36:24 -0500
+Processing by PractitionersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPractitioner Load (0.3ms)[0m  [1m[34mSELECT  "practitioners".* FROM "practitioners" WHERE "practitioners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering practitioners/show.html.erb within layouts/application
+  Rendered practitioners/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/practitioners" for ::1 at 2017-04-05 11:36:26 -0500
+Processing by PractitionersController#index as HTML
+  Rendering practitioners/index.html.erb within layouts/application
+  [1m[36mPractitioner Load (0.2ms)[0m  [1m[34mSELECT "practitioners".* FROM "practitioners"[0m
+  Rendered practitioners/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSponsors (20170405163707)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "sponsors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "prizes" integer, "has_won" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170405163707"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/sponsors" for ::1 at 2017-04-05 11:37:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SponsorsController#index as HTML
+  Rendering sponsors/index.html.erb within layouts/application
+  [1m[36mSponsor Load (0.1ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered sponsors/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 293ms (Views: 275.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sponsors/new" for ::1 at 2017-04-05 11:37:29 -0500
+Processing by SponsorsController#new as HTML
+  Rendering sponsors/new.html.erb within layouts/application
+  Rendered sponsors/_form.html.erb (25.8ms)
+  Rendered sponsors/new.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 60ms (Views: 52.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sponsors/new" for ::1 at 2017-04-05 11:45:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SponsorsController#new as HTML
+  Rendering sponsors/new.html.erb within layouts/application
+  Rendered sponsors/_form.html.erb (14.8ms)
+  Rendered sponsors/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 201ms (Views: 178.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sponsors" for ::1 at 2017-04-05 11:45:45 -0500
+Processing by SponsorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BFqx2RS+0M0Kc8Kgatb8orca5rAYlmuKdJU6Lenyc9EF8iOWj1T+UazpwSK6D4brMMyGXcuOsM2E6SzepHJ/DQ==", "sponsor"=>{"name"=>"test", "prizes"=>"-1", "has_won"=>"0"}, "commit"=>"Create Sponsor"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sponsors" ("name", "prizes", "has_won", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "test"], ["prizes", -1], ["has_won", false], ["created_at", 2017-04-05 16:45:45 UTC], ["updated_at", 2017-04-05 16:45:45 UTC]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/sponsors/1
+Completed 302 Found in 11ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/sponsors/1" for ::1 at 2017-04-05 11:45:45 -0500
+Processing by SponsorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSponsor Load (0.3ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sponsors/show.html.erb within layouts/application
+  Rendered sponsors/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sponsors" for ::1 at 2017-04-05 11:48:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SponsorsController#index as HTML
+  Rendering sponsors/index.html.erb within layouts/application
+  [1m[36mSponsor Load (0.2ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered sponsors/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 197ms (Views: 177.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/sponsors/1" for ::1 at 2017-04-05 11:48:21 -0500
+Processing by SponsorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CdLASPIdxaqJZ9kT5SBwKyCaTv1TvuyQZPxpEpbMSp4IelIHaffrNi/92pE1+Qpip0wuEICmN9eUgH/h20xGQg==", "id"=>"1"}
+  [1m[36mSponsor Load (0.6ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "sponsors" WHERE "sponsors"."id" = ?[0m  [["id", 1]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/sponsors
+Completed 302 Found in 19ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/sponsors" for ::1 at 2017-04-05 11:48:21 -0500
+Processing by SponsorsController#index as HTML
+  Rendering sponsors/index.html.erb within layouts/application
+  [1m[36mSponsor Load (0.1ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered sponsors/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sponsors/new" for ::1 at 2017-04-05 11:48:22 -0500
+Processing by SponsorsController#new as HTML
+  Rendering sponsors/new.html.erb within layouts/application
+  Rendered sponsors/_form.html.erb (20.3ms)
+  Rendered sponsors/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sponsors" for ::1 at 2017-04-05 11:48:26 -0500
+Processing by SponsorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nnsc9Wl1osTtwe2VO25CyN+mHIq3DIu9gMcRxtSHFZh2nyncXNkGCESkcop8uII3ZVC9OGwCSh1VtWJRpVH9Vw==", "sponsor"=>{"name"=>"", "prizes"=>"-1", "has_won"=>"0"}, "commit"=>"Create Sponsor"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering sponsors/new.html.erb within layouts/application
+  Rendered sponsors/_form.html.erb (3.1ms)
+  Rendered sponsors/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
