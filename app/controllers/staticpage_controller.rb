@@ -3,6 +3,7 @@ class StaticpageController < ApplicationController
   end
 
   def cio_raffle
+
   end
 
   def sim_raffle
