@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405163707) do
+ActiveRecord::Schema.define(version: 20170406142530) do
 
   create_table "practitioners", force: :cascade do |t|
     t.string   "name"
     t.string   "company"
     t.string   "title"
-    t.boolean  "has_won"
+    t.boolean  "won"
+    t.boolean  "present"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

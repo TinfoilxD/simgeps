@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simgeps</title>
+    <title><%= yield(:title) %> | SIM Raffle Application</title>
+    <nav>
+        <ul class="navbar navbar-fixed-top navbar-inverse">
+            <li><%= link_to "Home", root_path  %></li>
+            <li><%= link_to "CIO Raffle", cio_raffle_path  %></li>
+            <li><%= link_to "SIM Raffle", sim_raffle_path  %></li>
+        </ul>
+    </nav>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>

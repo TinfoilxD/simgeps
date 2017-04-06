@@ -4,10 +4,12 @@ one:
   name: MyString
   company: MyString
   title: MyString
-  has_won: false
+  won: false
+  present: false
 
 two:
   name: MyString
   company: MyString
   title: MyString
-  has_won: false
+  won: false
+  present: false

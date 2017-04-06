@@ -17,7 +17,7 @@ class PractitionersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create practitioner" do
     assert_difference('Practitioner.count') do
-      post practitioners_url, params: { practitioner: { company: @practitioner.company, has_won: @practitioner.has_won, name: @practitioner.name, title: @practitioner.title } }
+      post practitioners_url, params: { practitioner: { company: @practitioner.company, name: @practitioner.name, present: @practitioner.present, title: @practitioner.title, won: @practitioner.won } }
     end
 
     assert_redirected_to practitioner_url(Practitioner.last)
@@ -34,7 +34,7 @@ class PractitionersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update practitioner" do
-    patch practitioner_url(@practitioner), params: { practitioner: { company: @practitioner.company, has_won: @practitioner.has_won, name: @practitioner.name, title: @practitioner.title } }
+    patch practitioner_url(@practitioner), params: { practitioner: { company: @practitioner.company, name: @practitioner.name, present: @practitioner.present, title: @practitioner.title, won: @practitioner.won } }
     assert_redirected_to practitioner_url(@practitioner)
   end
 

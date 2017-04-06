@@ -8,7 +8,8 @@
       <th>Name</th>
       <th>Company</th>
       <th>Title</th>
-      <th>Has won</th>
+      <th>Won</th>
+      <th>Present</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +20,8 @@
         <td><%= practitioner.name %></td>
         <td><%= practitioner.company %></td>
         <td><%= practitioner.title %></td>
-        <td><%= practitioner.has_won %></td>
+        <td><%= practitioner.won %></td>
+        <td><%= practitioner.present %></td>
         <td><%= link_to 'Show', practitioner %></td>
         <td><%= link_to 'Edit', edit_practitioner_path(practitioner) %></td>
         <td><%= link_to 'Destroy', practitioner, method: :delete, data: { confirm: 'Are you sure?' } %></td>

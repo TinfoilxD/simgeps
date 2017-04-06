@@ -16,8 +16,13 @@
 </p>
 
 <p>
-  <strong>Has won:</strong>
-  <%= @practitioner.has_won %>
+  <strong>Won:</strong>
+  <%= @practitioner.won %>
+</p>
+
+<p>
+  <strong>Present:</strong>
+  <%= @practitioner.present %>
 </p>
 
 <%= link_to 'Edit', edit_practitioner_path(@practitioner) %> |
