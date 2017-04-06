@@ -3,7 +3,7 @@ class StaticpageController < ApplicationController
   end
 
   def cio_raffle
-
+    @sponsors = Sponsor.all
   end
 
   def sim_raffle
