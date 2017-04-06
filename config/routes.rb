@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get '/config', to: 'staticpage#config'
+
   get '/home', to: 'staticpage#home'
   get '/cio_raffle', to: 'staticpage#cio_raffle'
   get '/sim_raffle', to: 'staticpage#sim_raffle'
-  
+  get '/practitioners', to: 'practitioners#index'
+  get '/sponsors', to: 'sponsors#index'     
   root 'staticpage#home'
 
   resources :practitioners

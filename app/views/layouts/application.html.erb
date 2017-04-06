@@ -7,6 +7,13 @@
             <li><%= link_to "Home", root_path  %></li>
             <li><%= link_to "CIO Raffle", cio_raffle_path  %></li>
             <li><%= link_to "SIM Raffle", sim_raffle_path  %></li>
+            <li><%= link_to "Config", config_path %>
+                 <ul>
+                        <li><%= link_to "Configure Practitioners", practitioners_path %></li>
+                        <li><%= link_to "Configure Sponsors", sponsors_path %></li>
+                </ul>
+            </li>           
+            </ul>
         </ul>
     </nav>
     <%= csrf_meta_tags %>
