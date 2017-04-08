@@ -14,3 +14,33 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$( document ).on('turbolinks:load', function() {
+   addListeners()
+});
+
+function addListeners()
+{
+    $('#get_winners').click(function(){
+        data = {id: $('#sponsor_id').val()}
+        $.ajax({
+            url: "/cio_raffle_get_winners",
+            type: "POST",
+            data: data,
+            dataType: 'json',
+            success: function(json) {
+                $('#winners_area').empty()
+                createWinnerPartial(json)
+            }
+        })
+    })
+}
+function createWinnerPartial(winners)
+{
+    for (key in winners)
+    {
+        $('#winners_area').append(key,winners[key])
+    }
+}
+

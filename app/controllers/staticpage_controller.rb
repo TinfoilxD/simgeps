@@ -8,4 +8,8 @@ class StaticpageController < ApplicationController
 
   def sim_raffle
   end
+
+  def cio_raffle_get_winners
+
+  end
 end

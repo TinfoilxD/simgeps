@@ -3,6 +3,11 @@
 
 <p>Find me in app/views/staticpage/cio_raffle.html.erb</p>
 
+<input type="hidden" id="sponsor_id" value="<%=@sponsor.id%>">
 <h3>Sponsor: <%=@sponsors.first.name%></h3>
 <h4>Prizes Left: <%=@sponsors.first.prizes%></h4>
+
+<input type="button" id="get_winners" value="Get Winners">
+
+<div id="winners_area"></div>
 
