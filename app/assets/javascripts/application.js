@@ -31,7 +31,6 @@ function addListeners()
             data: data,
             dataType: 'json',
             success: function(json) {
-                $('#winners_area').empty()
                 createWinnerPartial(json)
             }
         })
@@ -39,9 +38,20 @@ function addListeners()
 }
 function createWinnerPartial(winners)
 {
+    //resets the winners area view
+    $('#winners_area').empty()
+
+
+    //creates the tablehead
+    $('#winners_area').append("<tr><th>Name</th><th>Company</th><th>&nbsp</th><th>&nbsp</th></tr>")
     for (key in winners)
     {
-        $('#winners_area').append(key,winners[key])
+        //render each individual row
+        table_cell_string = "<tr><td>" + winners[key].name + "</td><td>" + winners[key].company + "</td>"
+        button_cell_string = "<td><a>Received Prize</a></td><td><a>Not Present</a></td></tr>"
+
+        $('#winners_area').append(table_cell_string + button_cell_string)
+
     }
 }
 
