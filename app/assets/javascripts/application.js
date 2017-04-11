@@ -40,17 +40,22 @@ function createWinnerPartial(winners)
 {
     //resets the winners area view
     $('#winners_area').empty()
-
-
     //creates the tablehead
     $('#winners_area').append("<tr><th>Name</th><th>Company</th><th>&nbsp</th><th>&nbsp</th></tr>")
     for (key in winners)
     {
+        table_row_id = key + "_row"
+        receive_button_id = key + "_receive_button"
+        not_present_button_id = key + "_not_present_button"
         //render each individual row
-        table_cell_string = "<tr><td>" + winners[key].name + "</td><td>" + winners[key].company + "</td>"
-        button_cell_string = "<td><a>Received Prize</a></td><td><a>Not Present</a></td></tr>"
+        table_cell_string = "<tr id= " + table_row_id + "><td>" + winners[key].name + "</td><td>" + winners[key].company + "</td>"
+        button_cell_string = "<td id><a id= " + receive_button_id + ">Received Prize</a></td><td><a id= " + not_present_button_id+ ">Not Present</a></td></tr>"
 
+
+        //add click handlers to the two buttons for each row
         $('#winners_area').append(table_cell_string + button_cell_string)
+        $('#' + receive_button_id).click(function(){alert("This is " + receive_button_id)})
+        $('#' + not_present_button_id).click(function(){alert("This is " + not_present_button_id)})
 
     }
 }
