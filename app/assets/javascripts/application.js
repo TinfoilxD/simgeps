@@ -54,9 +54,21 @@ function createWinnerPartial(winners)
 
         //add click handlers to the two buttons for each row
         $('#winners_area').append(table_cell_string + button_cell_string)
-        $('#' + receive_button_id).click(function(){alert("This is " + receive_button_id)})
-        $('#' + not_present_button_id).click(function(){alert("This is " + not_present_button_id)})
+        $('#' + receive_button_id).click(function(){(receivePrizeAction(receive_button_id))})
+        $('#' + not_present_button_id).click(function(){(notPresentAction(not_present_button_id))})
 
     }
+
+
 }
 
+
+
+function receivePrizeAction(button_id)
+{
+    alert("This is " + button_id)
+}
+function notPresentAction(button_id)
+{
+    alert("This is " + button_id)
+}
